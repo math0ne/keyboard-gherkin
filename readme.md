@@ -1,30 +1,20 @@
 ## gherkin keyboard firmware
-![gherkin 1.0 Assembled](gherkin.jpg)
-======================
-gherkin keyboard. 6x5 matrix.
-![gherkin 1.0 PCB Front](pcb-top.png)
-![gherkin 1.0 PCB Bottom](pcb-bottom.png)
 
-Pinout
+You can see my layout here: http://www.keyboard-layout-editor.com/#/gists/5dec436256c0d150b6f5e854bc4c8429
 
-    col: D0, D4, C6, D7, E6, B4
-    row: B6, B2, B3, B1, F7
+I did this process in ubuntu bash for windows which seems to work great but will also work in cygwin or any linux distro.
 
-Mosfet on B5 to control backlight.
+* How to flash:
 
-BOM
+```
+apt-get install gcc-avr binutils-avr gdb-avr avr-libc avrdude
+git clone https://github.com/openist/keyboard-gherkin.git
+cd keyboard-gherkin
+make
+```
 
-    1	Pro Micro
-    2	12pin SIP headers, or 1 24 pin machined pin DIP socket
-    30	1n4148 diodes, save the cut off leads for use with machined pin socket
-    30	switches
-
-Needed if you want LEDs
-
-    30	LEDs
-    30	Resistors for LEDs. Use online LED caculator to choose value
-    1	FDS6630A or DMN3018SSS-13 SOIC FET
-    1	100ohm resistor
-    1	100Kilo ohm resistor
-
-[How to order your own PCBs](http://www.40percent.club/2017/03/ordering-pcb.html)
+* Copy your .hex file to somewhere you can easily access it.
+* Download Xloader: http://russemotto.com/xloader/
+* Connect your pro micro via usb, you should hear the device connected sound, if you do not you may not be using a proper data micro usb cable.
+* Reset the pro micro twice to enter bootloader mode.
+* Within 8 seconds load the hex file into xloader and press upload.
