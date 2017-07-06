@@ -1,4 +1,5 @@
 ## gherkin keyboard firmware
+![layout](https://raw.githubusercontent.com/openist/keyboard-gherkin/master/keyboard-layout.png)
 
 You can see my layout here: http://www.keyboard-layout-editor.com/#/gists/5dec436256c0d150b6f5e854bc4c8429
 
