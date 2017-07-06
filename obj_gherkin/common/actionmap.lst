@@ -1,0 +1,148 @@
+   1               		.file	"actionmap.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.action_for_key,"ax",@progbits
+  11               		.weak	action_for_key
+  13               	action_for_key:
+  14               	.LFB103:
+  15               		.file 1 "../../tmk_core/common/actionmap.c"
+   1:../../tmk_core/common/actionmap.c **** /*
+   2:../../tmk_core/common/actionmap.c **** Copyright 2015 Jun Wako <wakojun@gmail.com>
+   3:../../tmk_core/common/actionmap.c **** 
+   4:../../tmk_core/common/actionmap.c **** This program is free software: you can redistribute it and/or modify
+   5:../../tmk_core/common/actionmap.c **** it under the terms of the GNU General Public License as published by
+   6:../../tmk_core/common/actionmap.c **** the Free Software Foundation, either version 2 of the License, or
+   7:../../tmk_core/common/actionmap.c **** (at your option) any later version.
+   8:../../tmk_core/common/actionmap.c **** 
+   9:../../tmk_core/common/actionmap.c **** This program is distributed in the hope that it will be useful,
+  10:../../tmk_core/common/actionmap.c **** but WITHOUT ANY WARRANTY; without even the implied warranty of
+  11:../../tmk_core/common/actionmap.c **** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  12:../../tmk_core/common/actionmap.c **** GNU General Public License for more details.
+  13:../../tmk_core/common/actionmap.c **** 
+  14:../../tmk_core/common/actionmap.c **** You should have received a copy of the GNU General Public License
+  15:../../tmk_core/common/actionmap.c **** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  16:../../tmk_core/common/actionmap.c **** */
+  17:../../tmk_core/common/actionmap.c **** #include <stdint.h>
+  18:../../tmk_core/common/actionmap.c **** #include "action_code.h"
+  19:../../tmk_core/common/actionmap.c **** #include "actionmap.h"
+  20:../../tmk_core/common/actionmap.c **** 
+  21:../../tmk_core/common/actionmap.c **** 
+  22:../../tmk_core/common/actionmap.c **** /* Keymapping with 16bit action codes */
+  23:../../tmk_core/common/actionmap.c **** extern const action_t actionmaps[][MATRIX_ROWS][MATRIX_COLS];
+  24:../../tmk_core/common/actionmap.c **** 
+  25:../../tmk_core/common/actionmap.c **** 
+  26:../../tmk_core/common/actionmap.c **** /* Converts key to action */
+  27:../../tmk_core/common/actionmap.c **** __attribute__ ((weak))
+  28:../../tmk_core/common/actionmap.c **** action_t action_for_key(uint8_t layer, keypos_t key)
+  29:../../tmk_core/common/actionmap.c **** {
+  16               		.loc 1 29 0
+  17               		.cfi_startproc
+  18               	.LVL0:
+  19               	/* prologue: function */
+  20               	/* frame size = 0 */
+  21               	/* stack size = 0 */
+  22               	.L__stack_usage = 0
+  23               	.LBB2:
+  30:../../tmk_core/common/actionmap.c ****     return (action_t)pgm_read_word(&actionmaps[(layer)][(key.row)][(key.col)]);
+  24               		.loc 1 30 0
+  25 0000 96E0      		ldi r25,lo8(6)
+  26 0002 799F      		mul r23,r25
+  27 0004 F001      		movw r30,r0
+  28 0006 1124      		clr __zero_reg__
+  29 0008 9EE1      		ldi r25,lo8(30)
+  30 000a 899F      		mul r24,r25
+  31 000c E00D      		add r30,r0
+  32 000e F11D      		adc r31,r1
+  33 0010 1124      		clr __zero_reg__
+  34 0012 E60F      		add r30,r22
+  35 0014 F11D      		adc r31,__zero_reg__
+  36 0016 EE0F      		lsl r30
+  37 0018 FF1F      		rol r31
+  38               	.LVL1:
+  39 001a E050      		subi r30,lo8(-(actionmaps))
+  40 001c F040      		sbci r31,hi8(-(actionmaps))
+  41               	.LVL2:
+  42               	.LBE2:
+  31:../../tmk_core/common/actionmap.c **** }
+  43               		.loc 1 31 0
+  44               	/* #APP */
+  45               	 ;  30 "../../tmk_core/common/actionmap.c" 1
+  46 001e 8591      		lpm r24, Z+
+  47 0020 9491      		lpm r25, Z
+  48               		
+  49               	 ;  0 "" 2
+  50               	/* #NOAPP */
+  51 0022 0895      		ret
+  52               		.cfi_endproc
+  53               	.LFE103:
+  55               		.section	.text.action_get_macro,"ax",@progbits
+  56               		.weak	action_get_macro
+  58               	action_get_macro:
+  59               	.LFB104:
+  32:../../tmk_core/common/actionmap.c **** 
+  33:../../tmk_core/common/actionmap.c **** /* Macro */
+  34:../../tmk_core/common/actionmap.c **** __attribute__ ((weak))
+  35:../../tmk_core/common/actionmap.c **** const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
+  36:../../tmk_core/common/actionmap.c **** {
+  60               		.loc 1 36 0
+  61               		.cfi_startproc
+  62               	.LVL3:
+  63               	/* prologue: function */
+  64               	/* frame size = 0 */
+  65               	/* stack size = 0 */
+  66               	.L__stack_usage = 0
+  37:../../tmk_core/common/actionmap.c ****     return MACRO_NONE;
+  38:../../tmk_core/common/actionmap.c **** }
+  67               		.loc 1 38 0
+  68 0000 80E0      		ldi r24,0
+  69 0002 90E0      		ldi r25,0
+  70               	.LVL4:
+  71 0004 0895      		ret
+  72               		.cfi_endproc
+  73               	.LFE104:
+  75               		.section	.text.action_function,"ax",@progbits
+  76               		.weak	action_function
+  78               	action_function:
+  79               	.LFB105:
+  39:../../tmk_core/common/actionmap.c **** 
+  40:../../tmk_core/common/actionmap.c **** /* Function */
+  41:../../tmk_core/common/actionmap.c **** __attribute__ ((weak))
+  42:../../tmk_core/common/actionmap.c **** void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
+  43:../../tmk_core/common/actionmap.c **** {
+  80               		.loc 1 43 0
+  81               		.cfi_startproc
+  82               	.LVL5:
+  83               	/* prologue: function */
+  84               	/* frame size = 0 */
+  85               	/* stack size = 0 */
+  86               	.L__stack_usage = 0
+  87 0000 0895      		ret
+  88               		.cfi_endproc
+  89               	.LFE105:
+  91               		.text
+  92               	.Letext0:
+  93               		.file 2 "/usr/lib/avr/include/stdint.h"
+  94               		.file 3 "../../tmk_core/common/action_code.h"
+  95               		.file 4 "../../tmk_core/common/keyboard.h"
+  96               		.file 5 "../../tmk_core/common/action_macro.h"
+  97               		.file 6 "../../tmk_core/common/action.h"
+  98               		.file 7 "../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 actionmap.c
+     /tmp/ccT6vT13.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccT6vT13.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccT6vT13.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccT6vT13.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccT6vT13.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccT6vT13.s:13     .text.action_for_key:0000000000000000 action_for_key
+     /tmp/ccT6vT13.s:58     .text.action_get_macro:0000000000000000 action_get_macro
+     /tmp/ccT6vT13.s:78     .text.action_function:0000000000000000 action_function
+
+UNDEFINED SYMBOLS
+actionmaps

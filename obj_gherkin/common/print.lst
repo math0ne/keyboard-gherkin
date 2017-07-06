@@ -1,0 +1,80 @@
+   1               		.file	"print.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.print_set_sendchar,"ax",@progbits
+  11               	.global	print_set_sendchar
+  13               	print_set_sendchar:
+  14               	.LFB1:
+  15               		.file 1 "../../tmk_core/common/print.c"
+   1:../../tmk_core/common/print.c **** /* Copyright 2012,2013 Jun Wako <wakojun@gmail.com> */
+   2:../../tmk_core/common/print.c **** /* Very basic print functions, intended to be used with usb_debug_only.c
+   3:../../tmk_core/common/print.c ****  * http://www.pjrc.com/teensy/
+   4:../../tmk_core/common/print.c ****  * Copyright (c) 2008 PJRC.COM, LLC
+   5:../../tmk_core/common/print.c ****  * 
+   6:../../tmk_core/common/print.c ****  * Permission is hereby granted, free of charge, to any person obtaining a copy
+   7:../../tmk_core/common/print.c ****  * of this software and associated documentation files (the "Software"), to deal
+   8:../../tmk_core/common/print.c ****  * in the Software without restriction, including without limitation the rights
+   9:../../tmk_core/common/print.c ****  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  10:../../tmk_core/common/print.c ****  * copies of the Software, and to permit persons to whom the Software is
+  11:../../tmk_core/common/print.c ****  * furnished to do so, subject to the following conditions:
+  12:../../tmk_core/common/print.c ****  * 
+  13:../../tmk_core/common/print.c ****  * The above copyright notice and this permission notice shall be included in
+  14:../../tmk_core/common/print.c ****  * all copies or substantial portions of the Software.
+  15:../../tmk_core/common/print.c ****  * 
+  16:../../tmk_core/common/print.c ****  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  17:../../tmk_core/common/print.c ****  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  18:../../tmk_core/common/print.c ****  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  19:../../tmk_core/common/print.c ****  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  20:../../tmk_core/common/print.c ****  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  21:../../tmk_core/common/print.c ****  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  22:../../tmk_core/common/print.c ****  * THE SOFTWARE.
+  23:../../tmk_core/common/print.c ****  */
+  24:../../tmk_core/common/print.c **** 
+  25:../../tmk_core/common/print.c **** #include <stdint.h>
+  26:../../tmk_core/common/print.c **** #include "print.h"
+  27:../../tmk_core/common/print.c **** 
+  28:../../tmk_core/common/print.c **** 
+  29:../../tmk_core/common/print.c **** #ifndef NO_PRINT
+  30:../../tmk_core/common/print.c **** 
+  31:../../tmk_core/common/print.c **** #if defined(__AVR__)
+  32:../../tmk_core/common/print.c **** 
+  33:../../tmk_core/common/print.c **** #define sendchar(c)    xputc(c)
+  34:../../tmk_core/common/print.c **** 
+  35:../../tmk_core/common/print.c **** 
+  36:../../tmk_core/common/print.c **** void print_set_sendchar(int8_t (*sendchar_func)(uint8_t))
+  37:../../tmk_core/common/print.c **** {
+  16               		.loc 1 37 0
+  17               		.cfi_startproc
+  18               	.LVL0:
+  19               	/* prologue: function */
+  20               	/* frame size = 0 */
+  21               	/* stack size = 0 */
+  22               	.L__stack_usage = 0
+  38:../../tmk_core/common/print.c ****     xdev_out(sendchar_func);
+  23               		.loc 1 38 0
+  24 0000 9093 0000 		sts xfunc_out+1,r25
+  25 0004 8093 0000 		sts xfunc_out,r24
+  26 0008 0895      		ret
+  27               		.cfi_endproc
+  28               	.LFE1:
+  30               		.text
+  31               	.Letext0:
+  32               		.file 2 "/usr/lib/avr/include/stdint.h"
+  33               		.file 3 "../../tmk_core/common/avr/xprintf.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 print.c
+     /tmp/cc3wy8c3.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cc3wy8c3.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cc3wy8c3.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cc3wy8c3.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc3wy8c3.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc3wy8c3.s:13     .text.print_set_sendchar:0000000000000000 print_set_sendchar
+
+UNDEFINED SYMBOLS
+xfunc_out

@@ -1,0 +1,95 @@
+   1               		.file	"Events.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.USB_Event_Stub,"ax",@progbits
+  11               	.global	USB_Event_Stub
+  13               	USB_Event_Stub:
+  14               	.LFB16:
+  15               		.file 1 "../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c"
+   1:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** /*
+   2:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****              LUFA Library
+   3:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****      Copyright (C) Dean Camera, 2014.
+   4:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** 
+   5:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   dean [at] fourwalledcubicle [dot] com
+   6:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****            www.lufa-lib.org
+   7:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** */
+   8:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** 
+   9:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** /*
+  10:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   Copyright 2014  Dean Camera (dean [at] fourwalledcubicle [dot] com)
+  11:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** 
+  12:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   Permission to use, copy, modify, distribute, and sell this
+  13:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   software and its documentation for any purpose is hereby granted
+  14:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   without fee, provided that the above copyright notice appear in
+  15:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   all copies and that both that the copyright notice and this
+  16:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   permission notice and warranty disclaimer appear in supporting
+  17:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   documentation, and that the name of the author not be used in
+  18:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   advertising or publicity pertaining to distribution of the
+  19:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   software without specific, written prior permission.
+  20:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** 
+  21:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   The author disclaims all warranties with regard to this
+  22:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   software, including all implied warranties of merchantability
+  23:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   and fitness.  In no event shall the author be liable for any
+  24:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   special, indirect or consequential damages or any damages
+  25:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   whatsoever resulting from loss of use, data or profits, whether
+  26:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   in an action of contract, negligence or other tortious action,
+  27:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   arising out of or in connection with the use or performance of
+  28:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c ****   this software.
+  29:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** */
+  30:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** 
+  31:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** #define  __INCLUDE_FROM_EVENTS_C
+  32:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** #define  __INCLUDE_FROM_USB_DRIVER
+  33:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** #include "Events.h"
+  34:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** 
+  35:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** void USB_Event_Stub(void)
+  36:../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** {
+  16               		.loc 1 36 0
+  17               		.cfi_startproc
+  18               	/* prologue: function */
+  19               	/* frame size = 0 */
+  20               	/* stack size = 0 */
+  21               	.L__stack_usage = 0
+  22 0000 0895      		ret
+  23               		.cfi_endproc
+  24               	.LFE16:
+  26               		.weak	EVENT_USB_Device_Connect
+  27               		.set	EVENT_USB_Device_Connect,USB_Event_Stub
+  28               		.weak	EVENT_USB_Device_Disconnect
+  29               		.set	EVENT_USB_Device_Disconnect,USB_Event_Stub
+  30               		.weak	EVENT_USB_Device_ControlRequest
+  31               		.set	EVENT_USB_Device_ControlRequest,USB_Event_Stub
+  32               		.weak	EVENT_USB_Device_ConfigurationChanged
+  33               		.set	EVENT_USB_Device_ConfigurationChanged,USB_Event_Stub
+  34               		.weak	EVENT_USB_Device_Suspend
+  35               		.set	EVENT_USB_Device_Suspend,USB_Event_Stub
+  36               		.weak	EVENT_USB_Device_WakeUp
+  37               		.set	EVENT_USB_Device_WakeUp,USB_Event_Stub
+  38               		.weak	EVENT_USB_Device_Reset
+  39               		.set	EVENT_USB_Device_Reset,USB_Event_Stub
+  40               		.weak	EVENT_USB_Device_StartOfFrame
+  41               		.set	EVENT_USB_Device_StartOfFrame,USB_Event_Stub
+  42               		.text
+  43               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Events.c
+     /tmp/ccLQZlUG.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccLQZlUG.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccLQZlUG.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccLQZlUG.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccLQZlUG.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccLQZlUG.s:13     .text.USB_Event_Stub:0000000000000000 USB_Event_Stub
+     /tmp/ccLQZlUG.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Connect
+     /tmp/ccLQZlUG.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Disconnect
+     /tmp/ccLQZlUG.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_ControlRequest
+     /tmp/ccLQZlUG.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_ConfigurationChanged
+     /tmp/ccLQZlUG.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Suspend
+     /tmp/ccLQZlUG.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_WakeUp
+     /tmp/ccLQZlUG.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Reset
+     /tmp/ccLQZlUG.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_StartOfFrame
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,209 @@
+   1               		.file	"actionmap_gherkin.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               	.global	actionmaps
+  11               		.section	.progmem.data.actionmaps,"a",@progbits
+  14               	actionmaps:
+  15 0000 1400      		.word	20
+  16 0002 1A00      		.word	26
+  17 0004 0800      		.word	8
+  18 0006 1500      		.word	21
+  19 0008 1700      		.word	23
+  20 000a 1C00      		.word	28
+  21 000c 1800      		.word	24
+  22 000e 0C00      		.word	12
+  23 0010 1200      		.word	18
+  24 0012 1300      		.word	19
+  25 0014 0400      		.word	4
+  26 0016 1600      		.word	22
+  27 0018 0700      		.word	7
+  28 001a 0900      		.word	9
+  29 001c 0A00      		.word	10
+  30 001e 0B00      		.word	11
+  31 0020 0D00      		.word	13
+  32 0022 0E00      		.word	14
+  33 0024 0F00      		.word	15
+  34 0026 2800      		.word	40
+  35 0028 1D21      		.word	8477
+  36 002a 1B32      		.word	12827
+  37 002c 06A3      		.word	-23802
+  38 002e 19A4      		.word	-23527
+  39 0030 29A2      		.word	-24023
+  40 0032 2CA1      		.word	-24276
+  41 0034 05A5      		.word	-23291
+  42 0036 1134      		.word	13329
+  43 0038 1031      		.word	12560
+  44 003a 2A00      		.word	42
+  45 003c 1E00      		.word	30
+  46 003e 1F00      		.word	31
+  47 0040 2000      		.word	32
+  48 0042 2100      		.word	33
+  49 0044 2200      		.word	34
+  50 0046 2300      		.word	35
+  51 0048 2400      		.word	36
+  52 004a 2500      		.word	37
+  53 004c 2600      		.word	38
+  54 004e 2700      		.word	39
+  55 0050 3A00      		.word	58
+  56 0052 3B00      		.word	59
+  57 0054 3C00      		.word	60
+  58 0056 3D00      		.word	61
+  59 0058 3E00      		.word	62
+  60 005a 3F00      		.word	63
+  61 005c 4000      		.word	64
+  62 005e 4100      		.word	65
+  63 0060 4200      		.word	66
+  64 0062 4300      		.word	67
+  65 0064 0100      		.word	1
+  66 0066 0100      		.word	1
+  67 0068 0100      		.word	1
+  68 006a 0100      		.word	1
+  69 006c 4C00      		.word	76
+  70 006e 0100      		.word	1
+  71 0070 0100      		.word	1
+  72 0072 0100      		.word	1
+  73 0074 0100      		.word	1
+  74 0076 0100      		.word	1
+  75 0078 1E02      		.word	542
+  76 007a 1F02      		.word	543
+  77 007c 2002      		.word	544
+  78 007e 2102      		.word	545
+  79 0080 2202      		.word	546
+  80 0082 2302      		.word	547
+  81 0084 2402      		.word	548
+  82 0086 2502      		.word	549
+  83 0088 2602      		.word	550
+  84 008a 2702      		.word	551
+  85 008c 4400      		.word	68
+  86 008e 4500      		.word	69
+  87 0090 0100      		.word	1
+  88 0092 0100      		.word	1
+  89 0094 3800      		.word	56
+  90 0096 3100      		.word	49
+  91 0098 0100      		.word	1
+  92 009a 0100      		.word	1
+  93 009c 5200      		.word	82
+  94 009e 3500      		.word	53
+  95 00a0 0100      		.word	1
+  96 00a2 0100      		.word	1
+  97 00a4 0100      		.word	1
+  98 00a6 0100      		.word	1
+  99 00a8 0100      		.word	1
+ 100 00aa 0100      		.word	1
+ 101 00ac 0100      		.word	1
+ 102 00ae 5000      		.word	80
+ 103 00b0 5100      		.word	81
+ 104 00b2 4F00      		.word	79
+ 105 00b4 0100      		.word	1
+ 106 00b6 0100      		.word	1
+ 107 00b8 0100      		.word	1
+ 108 00ba 0100      		.word	1
+ 109 00bc 0100      		.word	1
+ 110 00be 2D00      		.word	45
+ 111 00c0 2E00      		.word	46
+ 112 00c2 3100      		.word	49
+ 113 00c4 2F00      		.word	47
+ 114 00c6 3000      		.word	48
+ 115 00c8 2B00      		.word	43
+ 116 00ca 0100      		.word	1
+ 117 00cc 0100      		.word	1
+ 118 00ce 0100      		.word	1
+ 119 00d0 0100      		.word	1
+ 120 00d2 3600      		.word	54
+ 121 00d4 3700      		.word	55
+ 122 00d6 3800      		.word	56
+ 123 00d8 3300      		.word	51
+ 124 00da 3400      		.word	52
+ 125 00dc 0100      		.word	1
+ 126 00de 0100      		.word	1
+ 127 00e0 0100      		.word	1
+ 128 00e2 0100      		.word	1
+ 129 00e4 0100      		.word	1
+ 130 00e6 0100      		.word	1
+ 131 00e8 5000      		.word	80
+ 132 00ea 5100      		.word	81
+ 133 00ec 5200      		.word	82
+ 134 00ee 4F00      		.word	79
+ 135 00f0 0100      		.word	1
+ 136 00f2 0100      		.word	1
+ 137 00f4 0100      		.word	1
+ 138 00f6 0100      		.word	1
+ 139 00f8 0100      		.word	1
+ 140 00fa 2D02      		.word	557
+ 141 00fc 2E02      		.word	558
+ 142 00fe 3102      		.word	561
+ 143 0100 2F02      		.word	559
+ 144 0102 3002      		.word	560
+ 145 0104 2B00      		.word	43
+ 146 0106 0100      		.word	1
+ 147 0108 0100      		.word	1
+ 148 010a 0100      		.word	1
+ 149 010c 0100      		.word	1
+ 150 010e 3602      		.word	566
+ 151 0110 3702      		.word	567
+ 152 0112 3802      		.word	568
+ 153 0114 3302      		.word	563
+ 154 0116 3402      		.word	564
+ 155 0118 0100      		.word	1
+ 156 011a 0100      		.word	1
+ 157 011c 0100      		.word	1
+ 158 011e 0100      		.word	1
+ 159 0120 0100      		.word	1
+ 160 0122 0100      		.word	1
+ 161 0124 4A00      		.word	74
+ 162 0126 4E00      		.word	78
+ 163 0128 4B00      		.word	75
+ 164 012a 4D00      		.word	77
+ 165 012c 9245      		.word	17810
+ 166 012e 2346      		.word	17955
+ 167 0130 8A45      		.word	17802
+ 168 0132 9445      		.word	17812
+ 169 0134 0100      		.word	1
+ 170 0136 0100      		.word	1
+ 171 0138 0100      		.word	1
+ 172 013a 0100      		.word	1
+ 173 013c 0100      		.word	1
+ 174 013e 4600      		.word	70
+ 175 0140 0100      		.word	1
+ 176 0142 0100      		.word	1
+ 177 0144 0100      		.word	1
+ 178 0146 0100      		.word	1
+ 179 0148 0100      		.word	1
+ 180 014a 0100      		.word	1
+ 181 014c 0100      		.word	1
+ 182 014e 0100      		.word	1
+ 183 0150 00D1      		.word	-12032
+ 184 0152 00D0      		.word	-12288
+ 185 0154 0100      		.word	1
+ 186 0156 0100      		.word	1
+ 187 0158 0100      		.word	1
+ 188 015a 0100      		.word	1
+ 189 015c BF00      		.word	191
+ 190 015e 0100      		.word	1
+ 191 0160 0100      		.word	1
+ 192 0162 0100      		.word	1
+ 193 0164 0100      		.word	1
+ 194 0166 0100      		.word	1
+ 195               		.text
+ 196               	.Letext0:
+ 197               		.file 1 "/usr/lib/avr/include/stdint.h"
+ 198               		.file 2 "../../tmk_core/common/keycode.h"
+ 199               		.file 3 "../../tmk_core/common/action_code.h"
+ 200               		.file 4 "../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
+ 201               		.file 5 "actionmap_gherkin.c"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 actionmap_gherkin.c
+     /tmp/ccplKfnx.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccplKfnx.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccplKfnx.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccplKfnx.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccplKfnx.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccplKfnx.s:14     .progmem.data.actionmaps:0000000000000000 actionmaps
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,193 @@
+   1               		.file	"backlight.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.backlight_init_ports,"ax",@progbits
+  11               	.global	backlight_init_ports
+  13               	backlight_init_ports:
+  14               	.LFB0:
+  15               		.file 1 "backlight.c"
+   1:backlight.c   **** // http://blog.saikoled.com/post/43165849837/secret-konami-cheat-code-to-high-resolution-pwm-on
+   2:backlight.c   **** #include <avr/io.h>
+   3:backlight.c   **** #include "backlight.h"
+   4:backlight.c   **** 
+   5:backlight.c   **** #define FET OCR1A
+   6:backlight.c   **** 
+   7:backlight.c   **** uint8_t led_counter = 0;
+   8:backlight.c   **** uint8_t led_level = 0;
+   9:backlight.c   **** 
+  10:backlight.c   **** 
+  11:backlight.c   **** void backlight_init_ports()
+  12:backlight.c   **** {
+  16               		.loc 1 12 0
+  17               		.cfi_startproc
+  18               	/* prologue: function */
+  19               	/* frame size = 0 */
+  20               	/* stack size = 0 */
+  21               	.L__stack_usage = 0
+  13:backlight.c   ****     DDRB |= (1<<5);
+  22               		.loc 1 13 0
+  23 0000 259A      		sbi 0x4,5
+  14:backlight.c   ****     PORTB &= ~(1<<5);
+  24               		.loc 1 14 0
+  25 0002 2D98      		cbi 0x5,5
+  15:backlight.c   **** 
+  16:backlight.c   ****     TCCR1A = _BV(COM1A1) | _BV(WGM11); // = 0b10000010;
+  26               		.loc 1 16 0
+  27 0004 82E8      		ldi r24,lo8(-126)
+  28 0006 8093 8000 		sts 128,r24
+  17:backlight.c   ****     TCCR1B = _BV(WGM13) | _BV(WGM12) | _BV(CS10); // = 0b00011001;
+  29               		.loc 1 17 0
+  30 000a 89E1      		ldi r24,lo8(25)
+  31 000c 8093 8100 		sts 129,r24
+  18:backlight.c   **** 
+  19:backlight.c   ****     ICR1 = 0xFFFF;
+  32               		.loc 1 19 0
+  33 0010 8FEF      		ldi r24,lo8(-1)
+  34 0012 9FEF      		ldi r25,lo8(-1)
+  35 0014 9093 8700 		sts 134+1,r25
+  36 0018 8093 8600 		sts 134,r24
+  20:backlight.c   **** 
+  21:backlight.c   ****     FET = 0x0000;
+  37               		.loc 1 21 0
+  38 001c 1092 8900 		sts 136+1,__zero_reg__
+  39 0020 1092 8800 		sts 136,__zero_reg__
+  22:backlight.c   **** 
+  23:backlight.c   ****     backlight_init();
+  40               		.loc 1 23 0
+  41 0024 0C94 0000 		jmp backlight_init
+  42               	.LVL0:
+  43               		.cfi_endproc
+  44               	.LFE0:
+  46               		.section	.text.backlight_set,"ax",@progbits
+  47               	.global	backlight_set
+  49               	backlight_set:
+  50               	.LFB1:
+  24:backlight.c   **** }
+  25:backlight.c   **** 
+  26:backlight.c   **** void backlight_set(uint8_t level)
+  27:backlight.c   **** {
+  51               		.loc 1 27 0
+  52               		.cfi_startproc
+  53               	.LVL1:
+  54               	/* prologue: function */
+  55               	/* frame size = 0 */
+  56               	/* stack size = 0 */
+  57               	.L__stack_usage = 0
+  28:backlight.c   ****     if ( level == 0 )
+  58               		.loc 1 28 0
+  59 0000 8111      		cpse r24,__zero_reg__
+  60 0002 00C0      		rjmp .L3
+  29:backlight.c   ****     {
+  30:backlight.c   ****         // Turn off PWM control on PB5, revert to output low.
+  31:backlight.c   ****         TCCR1A &= ~(_BV(COM1A1));
+  61               		.loc 1 31 0
+  62 0004 8091 8000 		lds r24,128
+  63               	.LVL2:
+  64 0008 8F77      		andi r24,lo8(127)
+  65 000a 8093 8000 		sts 128,r24
+  32:backlight.c   ****         FET = 0x0000;
+  66               		.loc 1 32 0
+  67 000e 1092 8900 		sts 136+1,__zero_reg__
+  68 0012 1092 8800 		sts 136,__zero_reg__
+  33:backlight.c   ****         // Prevent backlight blink on lowest level
+  34:backlight.c   ****         PORTB &= ~(_BV(PORTB5));
+  69               		.loc 1 34 0
+  70 0016 2D98      		cbi 0x5,5
+  71 0018 0895      		ret
+  72               	.LVL3:
+  73               	.L3:
+  35:backlight.c   ****     }
+  36:backlight.c   ****     else if ( level == BACKLIGHT_LEVELS )
+  37:backlight.c   ****     {
+  38:backlight.c   ****         // Prevent backlight blink on lowest level
+  39:backlight.c   ****         PORTB &= ~(_BV(PORTB5));
+  74               		.loc 1 39 0
+  75 001a 2D98      		cbi 0x5,5
+  36:backlight.c   ****     else if ( level == BACKLIGHT_LEVELS )
+  76               		.loc 1 36 0
+  77 001c 8430      		cpi r24,lo8(4)
+  78 001e 01F4      		brne .L5
+  40:backlight.c   ****         // Turn on PWM control of PB5
+  41:backlight.c   ****         TCCR1A |= _BV(COM1A1);
+  79               		.loc 1 41 0
+  80 0020 8091 8000 		lds r24,128
+  81               	.LVL4:
+  82 0024 8068      		ori r24,lo8(-128)
+  83 0026 8093 8000 		sts 128,r24
+  42:backlight.c   ****         // Set the brightness
+  43:backlight.c   ****         FET = 0xFFFF;
+  84               		.loc 1 43 0
+  85 002a 8FEF      		ldi r24,lo8(-1)
+  86 002c 9FEF      		ldi r25,lo8(-1)
+  87 002e 00C0      		rjmp .L6
+  88               	.LVL5:
+  89               	.L5:
+  44:backlight.c   ****     }
+  45:backlight.c   ****     else        
+  46:backlight.c   ****     {
+  47:backlight.c   ****         // Prevent backlight blink on lowest level
+  48:backlight.c   ****         PORTB &= ~(_BV(PORTB5));
+  49:backlight.c   ****         // Turn on PWM control of PB5
+  50:backlight.c   ****         TCCR1A |= _BV(COM1A1);
+  90               		.loc 1 50 0
+  91 0030 9091 8000 		lds r25,128
+  92 0034 9068      		ori r25,lo8(-128)
+  93 0036 9093 8000 		sts 128,r25
+  51:backlight.c   ****         // Set the brightness
+  52:backlight.c   ****         FET = 0xFFFF >> ((BACKLIGHT_LEVELS - level) * ((BACKLIGHT_LEVELS + 1) / 2));
+  94               		.loc 1 52 0
+  95 003a 24E0      		ldi r18,lo8(4)
+  96 003c 30E0      		ldi r19,0
+  97 003e 281B      		sub r18,r24
+  98 0040 3109      		sbc r19,__zero_reg__
+  99 0042 220F      		lsl r18
+ 100 0044 331F      		rol r19
+ 101               	.LVL6:
+ 102 0046 8FEF      		ldi r24,lo8(-1)
+ 103 0048 9FEF      		ldi r25,lo8(-1)
+ 104 004a 00C0      		rjmp 2f
+ 105               		1:
+ 106 004c 9695      		lsr r25
+ 107 004e 8795      		ror r24
+ 108               		2:
+ 109 0050 2A95      		dec r18
+ 110 0052 02F4      		brpl 1b
+ 111               	.L6:
+ 112 0054 9093 8900 		sts 136+1,r25
+ 113 0058 8093 8800 		sts 136,r24
+ 114 005c 0895      		ret
+ 115               		.cfi_endproc
+ 116               	.LFE1:
+ 118               	.global	led_level
+ 119               		.section	.bss.led_level,"aw",@nobits
+ 122               	led_level:
+ 123 0000 00        		.zero	1
+ 124               	.global	led_counter
+ 125               		.section	.bss.led_counter,"aw",@nobits
+ 128               	led_counter:
+ 129 0000 00        		.zero	1
+ 130               		.text
+ 131               	.Letext0:
+ 132               		.file 2 "/usr/lib/avr/include/stdint.h"
+ 133               		.file 3 "../../tmk_core/common/backlight.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 backlight.c
+     /tmp/ccK7hExd.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccK7hExd.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccK7hExd.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccK7hExd.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccK7hExd.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccK7hExd.s:13     .text.backlight_init_ports:0000000000000000 backlight_init_ports
+     /tmp/ccK7hExd.s:49     .text.backlight_set:0000000000000000 backlight_set
+     /tmp/ccK7hExd.s:122    .bss.led_level:0000000000000000 led_level
+     /tmp/ccK7hExd.s:128    .bss.led_counter:0000000000000000 led_counter
+
+UNDEFINED SYMBOLS
+backlight_init
+__do_clear_bss

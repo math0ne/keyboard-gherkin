@@ -1,0 +1,344 @@
+   1               		.file	"eeconfig.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.eeconfig_init,"ax",@progbits
+  11               	.global	eeconfig_init
+  13               	eeconfig_init:
+  14               	.LFB0:
+  15               		.file 1 "../../tmk_core/common/avr/eeconfig.c"
+   1:../../tmk_core/common/avr/eeconfig.c **** #include <stdint.h>
+   2:../../tmk_core/common/avr/eeconfig.c **** #include <stdbool.h>
+   3:../../tmk_core/common/avr/eeconfig.c **** #include <avr/eeprom.h>
+   4:../../tmk_core/common/avr/eeconfig.c **** #include "eeconfig.h"
+   5:../../tmk_core/common/avr/eeconfig.c **** 
+   6:../../tmk_core/common/avr/eeconfig.c **** void eeconfig_init(void)
+   7:../../tmk_core/common/avr/eeconfig.c **** {
+  16               		.loc 1 7 0
+  17               		.cfi_startproc
+  18               	/* prologue: function */
+  19               	/* frame size = 0 */
+  20               	/* stack size = 0 */
+  21               	.L__stack_usage = 0
+   8:../../tmk_core/common/avr/eeconfig.c ****     eeprom_write_word(EECONFIG_MAGIC,          EECONFIG_MAGIC_NUMBER);
+  22               		.loc 1 8 0
+  23 0000 6DEE      		ldi r22,lo8(-19)
+  24 0002 7EEF      		ldi r23,lo8(-2)
+  25 0004 80E0      		ldi r24,0
+  26 0006 90E0      		ldi r25,0
+  27 0008 0E94 0000 		call __eewr_word_m32u4
+  28               	.LVL0:
+   9:../../tmk_core/common/avr/eeconfig.c ****     eeprom_write_byte(EECONFIG_DEBUG,          0);
+  29               		.loc 1 9 0
+  30 000c 60E0      		ldi r22,0
+  31 000e 82E0      		ldi r24,lo8(2)
+  32 0010 90E0      		ldi r25,0
+  33 0012 0E94 0000 		call __eewr_byte_m32u4
+  34               	.LVL1:
+  10:../../tmk_core/common/avr/eeconfig.c ****     eeprom_write_byte(EECONFIG_DEFAULT_LAYER,  0);
+  35               		.loc 1 10 0
+  36 0016 60E0      		ldi r22,0
+  37 0018 83E0      		ldi r24,lo8(3)
+  38 001a 90E0      		ldi r25,0
+  39 001c 0E94 0000 		call __eewr_byte_m32u4
+  40               	.LVL2:
+  11:../../tmk_core/common/avr/eeconfig.c ****     eeprom_write_byte(EECONFIG_KEYMAP,         0);
+  41               		.loc 1 11 0
+  42 0020 60E0      		ldi r22,0
+  43 0022 84E0      		ldi r24,lo8(4)
+  44 0024 90E0      		ldi r25,0
+  45 0026 0E94 0000 		call __eewr_byte_m32u4
+  46               	.LVL3:
+  12:../../tmk_core/common/avr/eeconfig.c ****     eeprom_write_byte(EECONFIG_MOUSEKEY_ACCEL, 0);
+  47               		.loc 1 12 0
+  48 002a 60E0      		ldi r22,0
+  49 002c 85E0      		ldi r24,lo8(5)
+  50 002e 90E0      		ldi r25,0
+  51 0030 0E94 0000 		call __eewr_byte_m32u4
+  52               	.LVL4:
+  13:../../tmk_core/common/avr/eeconfig.c **** #ifdef BACKLIGHT_ENABLE
+  14:../../tmk_core/common/avr/eeconfig.c ****     eeprom_write_byte(EECONFIG_BACKLIGHT,      0);
+  53               		.loc 1 14 0
+  54 0034 60E0      		ldi r22,0
+  55 0036 86E0      		ldi r24,lo8(6)
+  56 0038 90E0      		ldi r25,0
+  57 003a 0C94 0000 		jmp __eewr_byte_m32u4
+  58               	.LVL5:
+  59               		.cfi_endproc
+  60               	.LFE0:
+  62               		.section	.text.eeconfig_enable,"ax",@progbits
+  63               	.global	eeconfig_enable
+  65               	eeconfig_enable:
+  66               	.LFB1:
+  15:../../tmk_core/common/avr/eeconfig.c **** #endif
+  16:../../tmk_core/common/avr/eeconfig.c **** }
+  17:../../tmk_core/common/avr/eeconfig.c **** 
+  18:../../tmk_core/common/avr/eeconfig.c **** void eeconfig_enable(void)
+  19:../../tmk_core/common/avr/eeconfig.c **** {
+  67               		.loc 1 19 0
+  68               		.cfi_startproc
+  69               	/* prologue: function */
+  70               	/* frame size = 0 */
+  71               	/* stack size = 0 */
+  72               	.L__stack_usage = 0
+  20:../../tmk_core/common/avr/eeconfig.c ****     eeprom_write_word(EECONFIG_MAGIC, EECONFIG_MAGIC_NUMBER);
+  73               		.loc 1 20 0
+  74 0000 6DEE      		ldi r22,lo8(-19)
+  75 0002 7EEF      		ldi r23,lo8(-2)
+  76 0004 80E0      		ldi r24,0
+  77 0006 90E0      		ldi r25,0
+  78 0008 0C94 0000 		jmp __eewr_word_m32u4
+  79               	.LVL6:
+  80               		.cfi_endproc
+  81               	.LFE1:
+  83               		.section	.text.eeconfig_disable,"ax",@progbits
+  84               	.global	eeconfig_disable
+  86               	eeconfig_disable:
+  87               	.LFB2:
+  21:../../tmk_core/common/avr/eeconfig.c **** }
+  22:../../tmk_core/common/avr/eeconfig.c **** 
+  23:../../tmk_core/common/avr/eeconfig.c **** void eeconfig_disable(void)
+  24:../../tmk_core/common/avr/eeconfig.c **** {
+  88               		.loc 1 24 0
+  89               		.cfi_startproc
+  90               	/* prologue: function */
+  91               	/* frame size = 0 */
+  92               	/* stack size = 0 */
+  93               	.L__stack_usage = 0
+  25:../../tmk_core/common/avr/eeconfig.c ****     eeprom_write_word(EECONFIG_MAGIC, 0xFFFF);
+  94               		.loc 1 25 0
+  95 0000 6FEF      		ldi r22,lo8(-1)
+  96 0002 7FEF      		ldi r23,lo8(-1)
+  97 0004 80E0      		ldi r24,0
+  98 0006 90E0      		ldi r25,0
+  99 0008 0C94 0000 		jmp __eewr_word_m32u4
+ 100               	.LVL7:
+ 101               		.cfi_endproc
+ 102               	.LFE2:
+ 104               		.section	.text.eeconfig_is_enabled,"ax",@progbits
+ 105               	.global	eeconfig_is_enabled
+ 107               	eeconfig_is_enabled:
+ 108               	.LFB3:
+  26:../../tmk_core/common/avr/eeconfig.c **** }
+  27:../../tmk_core/common/avr/eeconfig.c **** 
+  28:../../tmk_core/common/avr/eeconfig.c **** bool eeconfig_is_enabled(void)
+  29:../../tmk_core/common/avr/eeconfig.c **** {
+ 109               		.loc 1 29 0
+ 110               		.cfi_startproc
+ 111               	/* prologue: function */
+ 112               	/* frame size = 0 */
+ 113               	/* stack size = 0 */
+ 114               	.L__stack_usage = 0
+  30:../../tmk_core/common/avr/eeconfig.c ****     return (eeprom_read_word(EECONFIG_MAGIC) == EECONFIG_MAGIC_NUMBER);
+ 115               		.loc 1 30 0
+ 116 0000 80E0      		ldi r24,0
+ 117 0002 90E0      		ldi r25,0
+ 118 0004 0E94 0000 		call __eerd_word_m32u4
+ 119               	.LVL8:
+ 120 0008 21E0      		ldi r18,lo8(1)
+ 121 000a 8D3E      		cpi r24,-19
+ 122 000c 9E4F      		sbci r25,-2
+ 123 000e 01F0      		breq .L5
+ 124 0010 20E0      		ldi r18,0
+ 125               	.L5:
+  31:../../tmk_core/common/avr/eeconfig.c **** }
+ 126               		.loc 1 31 0
+ 127 0012 822F      		mov r24,r18
+ 128 0014 0895      		ret
+ 129               		.cfi_endproc
+ 130               	.LFE3:
+ 132               		.section	.text.eeconfig_read_debug,"ax",@progbits
+ 133               	.global	eeconfig_read_debug
+ 135               	eeconfig_read_debug:
+ 136               	.LFB4:
+  32:../../tmk_core/common/avr/eeconfig.c **** 
+  33:../../tmk_core/common/avr/eeconfig.c **** uint8_t eeconfig_read_debug(void)      { return eeprom_read_byte(EECONFIG_DEBUG); }
+ 137               		.loc 1 33 0
+ 138               		.cfi_startproc
+ 139               	/* prologue: function */
+ 140               	/* frame size = 0 */
+ 141               	/* stack size = 0 */
+ 142               	.L__stack_usage = 0
+ 143               		.loc 1 33 0
+ 144 0000 82E0      		ldi r24,lo8(2)
+ 145 0002 90E0      		ldi r25,0
+ 146 0004 0C94 0000 		jmp __eerd_byte_m32u4
+ 147               	.LVL9:
+ 148               		.cfi_endproc
+ 149               	.LFE4:
+ 151               		.section	.text.eeconfig_write_debug,"ax",@progbits
+ 152               	.global	eeconfig_write_debug
+ 154               	eeconfig_write_debug:
+ 155               	.LFB5:
+  34:../../tmk_core/common/avr/eeconfig.c **** void eeconfig_write_debug(uint8_t val) { eeprom_write_byte(EECONFIG_DEBUG, val); }
+ 156               		.loc 1 34 0
+ 157               		.cfi_startproc
+ 158               	.LVL10:
+ 159               	/* prologue: function */
+ 160               	/* frame size = 0 */
+ 161               	/* stack size = 0 */
+ 162               	.L__stack_usage = 0
+ 163               		.loc 1 34 0
+ 164 0000 682F      		mov r22,r24
+ 165 0002 82E0      		ldi r24,lo8(2)
+ 166 0004 90E0      		ldi r25,0
+ 167               	.LVL11:
+ 168 0006 0C94 0000 		jmp __eewr_byte_m32u4
+ 169               	.LVL12:
+ 170               		.cfi_endproc
+ 171               	.LFE5:
+ 173               		.section	.text.eeconfig_read_default_layer,"ax",@progbits
+ 174               	.global	eeconfig_read_default_layer
+ 176               	eeconfig_read_default_layer:
+ 177               	.LFB6:
+  35:../../tmk_core/common/avr/eeconfig.c **** 
+  36:../../tmk_core/common/avr/eeconfig.c **** uint8_t eeconfig_read_default_layer(void)      { return eeprom_read_byte(EECONFIG_DEFAULT_LAYER); }
+ 178               		.loc 1 36 0
+ 179               		.cfi_startproc
+ 180               	/* prologue: function */
+ 181               	/* frame size = 0 */
+ 182               	/* stack size = 0 */
+ 183               	.L__stack_usage = 0
+ 184               		.loc 1 36 0
+ 185 0000 83E0      		ldi r24,lo8(3)
+ 186 0002 90E0      		ldi r25,0
+ 187 0004 0C94 0000 		jmp __eerd_byte_m32u4
+ 188               	.LVL13:
+ 189               		.cfi_endproc
+ 190               	.LFE6:
+ 192               		.section	.text.eeconfig_write_default_layer,"ax",@progbits
+ 193               	.global	eeconfig_write_default_layer
+ 195               	eeconfig_write_default_layer:
+ 196               	.LFB7:
+  37:../../tmk_core/common/avr/eeconfig.c **** void eeconfig_write_default_layer(uint8_t val) { eeprom_write_byte(EECONFIG_DEFAULT_LAYER, val); }
+ 197               		.loc 1 37 0
+ 198               		.cfi_startproc
+ 199               	.LVL14:
+ 200               	/* prologue: function */
+ 201               	/* frame size = 0 */
+ 202               	/* stack size = 0 */
+ 203               	.L__stack_usage = 0
+ 204               		.loc 1 37 0
+ 205 0000 682F      		mov r22,r24
+ 206 0002 83E0      		ldi r24,lo8(3)
+ 207 0004 90E0      		ldi r25,0
+ 208               	.LVL15:
+ 209 0006 0C94 0000 		jmp __eewr_byte_m32u4
+ 210               	.LVL16:
+ 211               		.cfi_endproc
+ 212               	.LFE7:
+ 214               		.section	.text.eeconfig_read_keymap,"ax",@progbits
+ 215               	.global	eeconfig_read_keymap
+ 217               	eeconfig_read_keymap:
+ 218               	.LFB8:
+  38:../../tmk_core/common/avr/eeconfig.c **** 
+  39:../../tmk_core/common/avr/eeconfig.c **** uint8_t eeconfig_read_keymap(void)      { return eeprom_read_byte(EECONFIG_KEYMAP); }
+ 219               		.loc 1 39 0
+ 220               		.cfi_startproc
+ 221               	/* prologue: function */
+ 222               	/* frame size = 0 */
+ 223               	/* stack size = 0 */
+ 224               	.L__stack_usage = 0
+ 225               		.loc 1 39 0
+ 226 0000 84E0      		ldi r24,lo8(4)
+ 227 0002 90E0      		ldi r25,0
+ 228 0004 0C94 0000 		jmp __eerd_byte_m32u4
+ 229               	.LVL17:
+ 230               		.cfi_endproc
+ 231               	.LFE8:
+ 233               		.section	.text.eeconfig_write_keymap,"ax",@progbits
+ 234               	.global	eeconfig_write_keymap
+ 236               	eeconfig_write_keymap:
+ 237               	.LFB9:
+  40:../../tmk_core/common/avr/eeconfig.c **** void eeconfig_write_keymap(uint8_t val) { eeprom_write_byte(EECONFIG_KEYMAP, val); }
+ 238               		.loc 1 40 0
+ 239               		.cfi_startproc
+ 240               	.LVL18:
+ 241               	/* prologue: function */
+ 242               	/* frame size = 0 */
+ 243               	/* stack size = 0 */
+ 244               	.L__stack_usage = 0
+ 245               		.loc 1 40 0
+ 246 0000 682F      		mov r22,r24
+ 247 0002 84E0      		ldi r24,lo8(4)
+ 248 0004 90E0      		ldi r25,0
+ 249               	.LVL19:
+ 250 0006 0C94 0000 		jmp __eewr_byte_m32u4
+ 251               	.LVL20:
+ 252               		.cfi_endproc
+ 253               	.LFE9:
+ 255               		.section	.text.eeconfig_read_backlight,"ax",@progbits
+ 256               	.global	eeconfig_read_backlight
+ 258               	eeconfig_read_backlight:
+ 259               	.LFB10:
+  41:../../tmk_core/common/avr/eeconfig.c **** 
+  42:../../tmk_core/common/avr/eeconfig.c **** #ifdef BACKLIGHT_ENABLE
+  43:../../tmk_core/common/avr/eeconfig.c **** uint8_t eeconfig_read_backlight(void)      { return eeprom_read_byte(EECONFIG_BACKLIGHT); }
+ 260               		.loc 1 43 0
+ 261               		.cfi_startproc
+ 262               	/* prologue: function */
+ 263               	/* frame size = 0 */
+ 264               	/* stack size = 0 */
+ 265               	.L__stack_usage = 0
+ 266               		.loc 1 43 0
+ 267 0000 86E0      		ldi r24,lo8(6)
+ 268 0002 90E0      		ldi r25,0
+ 269 0004 0C94 0000 		jmp __eerd_byte_m32u4
+ 270               	.LVL21:
+ 271               		.cfi_endproc
+ 272               	.LFE10:
+ 274               		.section	.text.eeconfig_write_backlight,"ax",@progbits
+ 275               	.global	eeconfig_write_backlight
+ 277               	eeconfig_write_backlight:
+ 278               	.LFB11:
+  44:../../tmk_core/common/avr/eeconfig.c **** void eeconfig_write_backlight(uint8_t val) { eeprom_write_byte(EECONFIG_BACKLIGHT, val); }
+ 279               		.loc 1 44 0
+ 280               		.cfi_startproc
+ 281               	.LVL22:
+ 282               	/* prologue: function */
+ 283               	/* frame size = 0 */
+ 284               	/* stack size = 0 */
+ 285               	.L__stack_usage = 0
+ 286               		.loc 1 44 0
+ 287 0000 682F      		mov r22,r24
+ 288 0002 86E0      		ldi r24,lo8(6)
+ 289 0004 90E0      		ldi r25,0
+ 290               	.LVL23:
+ 291 0006 0C94 0000 		jmp __eewr_byte_m32u4
+ 292               	.LVL24:
+ 293               		.cfi_endproc
+ 294               	.LFE11:
+ 296               		.text
+ 297               	.Letext0:
+ 298               		.file 2 "/usr/lib/avr/include/stdint.h"
+ 299               		.file 3 "/usr/lib/avr/include/avr/eeprom.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 eeconfig.c
+     /tmp/cctdB56B.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cctdB56B.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cctdB56B.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cctdB56B.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cctdB56B.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cctdB56B.s:13     .text.eeconfig_init:0000000000000000 eeconfig_init
+     /tmp/cctdB56B.s:65     .text.eeconfig_enable:0000000000000000 eeconfig_enable
+     /tmp/cctdB56B.s:86     .text.eeconfig_disable:0000000000000000 eeconfig_disable
+     /tmp/cctdB56B.s:107    .text.eeconfig_is_enabled:0000000000000000 eeconfig_is_enabled
+     /tmp/cctdB56B.s:135    .text.eeconfig_read_debug:0000000000000000 eeconfig_read_debug
+     /tmp/cctdB56B.s:154    .text.eeconfig_write_debug:0000000000000000 eeconfig_write_debug
+     /tmp/cctdB56B.s:176    .text.eeconfig_read_default_layer:0000000000000000 eeconfig_read_default_layer
+     /tmp/cctdB56B.s:195    .text.eeconfig_write_default_layer:0000000000000000 eeconfig_write_default_layer
+     /tmp/cctdB56B.s:217    .text.eeconfig_read_keymap:0000000000000000 eeconfig_read_keymap
+     /tmp/cctdB56B.s:236    .text.eeconfig_write_keymap:0000000000000000 eeconfig_write_keymap
+     /tmp/cctdB56B.s:258    .text.eeconfig_read_backlight:0000000000000000 eeconfig_read_backlight
+     /tmp/cctdB56B.s:277    .text.eeconfig_write_backlight:0000000000000000 eeconfig_write_backlight
+
+UNDEFINED SYMBOLS
+__eewr_word_m32u4
+__eewr_byte_m32u4
+__eerd_word_m32u4
+__eerd_byte_m32u4

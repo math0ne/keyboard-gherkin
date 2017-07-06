@@ -1,0 +1,93 @@
+   1               		.file	"led.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.led_set,"ax",@progbits
+  11               	.global	led_set
+  13               	led_set:
+  14               	.LFB0:
+  15               		.file 1 "led.c"
+   1:led.c         **** /*
+   2:led.c         **** Copyright 2012 Jun Wako <wakojun@gmail.com>
+   3:led.c         **** 
+   4:led.c         **** This program is free software: you can redistribute it and/or modify
+   5:led.c         **** it under the terms of the GNU General Public License as published by
+   6:led.c         **** the Free Software Foundation, either version 2 of the License, or
+   7:led.c         **** (at your option) any later version.
+   8:led.c         **** 
+   9:led.c         **** This program is distributed in the hope that it will be useful,
+  10:led.c         **** but WITHOUT ANY WARRANTY; without even the implied warranty of
+  11:led.c         **** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  12:led.c         **** GNU General Public License for more details.
+  13:led.c         **** 
+  14:led.c         **** You should have received a copy of the GNU General Public License
+  15:led.c         **** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  16:led.c         **** */
+  17:led.c         **** 
+  18:led.c         **** #include <avr/io.h>
+  19:led.c         **** #include "stdint.h"
+  20:led.c         **** #include "led.h"
+  21:led.c         **** 
+  22:led.c         **** 
+  23:led.c         **** void led_set(uint8_t usb_led)
+  24:led.c         **** {
+  16               		.loc 1 24 0
+  17               		.cfi_startproc
+  18               	.LVL0:
+  19               	/* prologue: function */
+  20               	/* frame size = 0 */
+  21               	/* stack size = 0 */
+  22               	.L__stack_usage = 0
+  25:led.c         ****     if (usb_led & (1<<USB_LED_CAPS_LOCK)) {
+  23               		.loc 1 25 0
+  24 0000 81FF      		sbrs r24,1
+  25 0002 00C0      		rjmp .L2
+  26:led.c         ****         // output low
+  27:led.c         ****         DDRB |= (1<<0);
+  26               		.loc 1 27 0
+  27 0004 209A      		sbi 0x4,0
+  28:led.c         ****         PORTB &= ~(1<<0);
+  28               		.loc 1 28 0
+  29 0006 2898      		cbi 0x5,0
+  29:led.c         ****         DDRD |= (1<<5);
+  30               		.loc 1 29 0
+  31 0008 559A      		sbi 0xa,5
+  32 000a 00C0      		rjmp .L4
+  33               	.L2:
+  30:led.c         ****         PORTD &= ~(1<<5);
+  31:led.c         ****     } else {
+  32:led.c         ****         // Hi-Z
+  33:led.c         ****         DDRB &= ~(1<<0);
+  34               		.loc 1 33 0
+  35 000c 2098      		cbi 0x4,0
+  34:led.c         ****         PORTB &= ~(1<<0);
+  36               		.loc 1 34 0
+  37 000e 2898      		cbi 0x5,0
+  35:led.c         ****         DDRD &= ~(1<<5);
+  38               		.loc 1 35 0
+  39 0010 5598      		cbi 0xa,5
+  40               	.L4:
+  36:led.c         ****         PORTD &= ~(1<<5);
+  41               		.loc 1 36 0
+  42 0012 5D98      		cbi 0xb,5
+  43 0014 0895      		ret
+  44               		.cfi_endproc
+  45               	.LFE0:
+  47               		.text
+  48               	.Letext0:
+  49               		.file 2 "/usr/lib/avr/include/stdint.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 led.c
+     /tmp/ccuj2qR6.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccuj2qR6.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccuj2qR6.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccuj2qR6.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccuj2qR6.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccuj2qR6.s:13     .text.led_set:0000000000000000 led_set
+
+NO UNDEFINED SYMBOLS
