@@ -189,13 +189,13 @@ uint8_t USB_ProcessHIDReport(const uint8_t* ReportData,
 
 		ReportData++;
 		ReportSize--;
-     100:	0d 00 0e 00 0f 00 28 00 1d 21 1b 32 06 a3 19 a4     ......(..!.2....
+     100:	0d 00 0e 00 0f 00 28 00 1d 21 1b 32 06 34 19 a4     ......(..!.2.4..
 
 		switch (HIDReportItem & HID_RI_DATA_SIZE_MASK)
 		{
 			case HID_RI_DATA_BITS_32:
 				ReportItemData  = (((uint32_t)ReportData[3] << 24) | ((uint32_t)ReportData[2] << 16) |
-     110:	29 a2 2c a1 05 a5 11 34 10 31 2a 00 1e 00 1f 00     ).,....4.1*.....
+     110:	29 a2 2c a1 05 a5 11 a3 10 31 2a 00 1e 00 1f 00     ).,......1*.....
      120:	20 00 21 00 22 00 23 00 24 00 25 00 26 00 27 00      .!.".#.$.%.&.'.
 			                       ((uint16_t)ReportData[1] << 8)  | ReportData[0]);
      130:	3a 00 3b 00 3c 00 3d 00 3e 00 3f 00 40 00 41 00     :.;.<.=.>.?.@.A.

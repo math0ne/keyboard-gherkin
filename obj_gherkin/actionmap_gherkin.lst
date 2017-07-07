@@ -32,12 +32,12 @@
   34 0026 2800      		.word	40
   35 0028 1D21      		.word	8477
   36 002a 1B32      		.word	12827
-  37 002c 06A3      		.word	-23802
+  37 002c 0634      		.word	13318
   38 002e 19A4      		.word	-23527
   39 0030 29A2      		.word	-24023
   40 0032 2CA1      		.word	-24276
   41 0034 05A5      		.word	-23291
-  42 0036 1134      		.word	13329
+  42 0036 11A3      		.word	-23791
   43 0038 1031      		.word	12560
   44 003a 2A00      		.word	42
   45 003c 1E00      		.word	30
@@ -199,11 +199,11 @@
  201               		.file 5 "actionmap_gherkin.c"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 actionmap_gherkin.c
-     /tmp/ccqkw34f.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccqkw34f.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccqkw34f.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccqkw34f.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccqkw34f.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccqkw34f.s:14     .progmem.data.actionmaps:0000000000000000 actionmaps
+     /tmp/ccaul13j.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccaul13j.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccaul13j.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccaul13j.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccaul13j.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccaul13j.s:14     .progmem.data.actionmaps:0000000000000000 actionmaps
 
 NO UNDEFINED SYMBOLS
