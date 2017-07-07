@@ -80,23 +80,23 @@
   82 0086 2502      		.word	549
   83 0088 2602      		.word	550
   84 008a 2702      		.word	551
-  85 008c 4400      		.word	68
-  86 008e 4500      		.word	69
-  87 0090 0100      		.word	1
-  88 0092 0100      		.word	1
+  85 008c 2D00      		.word	45
+  86 008e 2E02      		.word	558
+  87 0090 3400      		.word	52
+  88 0092 3402      		.word	564
   89 0094 3800      		.word	56
   90 0096 3100      		.word	49
-  91 0098 0100      		.word	1
-  92 009a 0100      		.word	1
+  91 0098 3700      		.word	55
+  92 009a 3600      		.word	54
   93 009c 5200      		.word	82
-  94 009e 3500      		.word	53
-  95 00a0 0100      		.word	1
-  96 00a2 0100      		.word	1
-  97 00a4 0100      		.word	1
-  98 00a6 0100      		.word	1
+  94 009e 3300      		.word	51
+  95 00a0 2D02      		.word	557
+  96 00a2 2E00      		.word	46
+  97 00a4 3802      		.word	568
+  98 00a6 3102      		.word	561
   99 00a8 0100      		.word	1
  100 00aa 0100      		.word	1
- 101 00ac 0100      		.word	1
+ 101 00ac 3302      		.word	563
  102 00ae 5000      		.word	80
  103 00b0 5100      		.word	81
  104 00b2 4F00      		.word	79
@@ -105,9 +105,9 @@
  107 00b8 0100      		.word	1
  108 00ba 0100      		.word	1
  109 00bc 0100      		.word	1
- 110 00be 2D00      		.word	45
- 111 00c0 2E00      		.word	46
- 112 00c2 3100      		.word	49
+ 110 00be 0100      		.word	1
+ 111 00c0 0100      		.word	1
+ 112 00c2 0100      		.word	1
  113 00c4 2F00      		.word	47
  114 00c6 3000      		.word	48
  115 00c8 2B00      		.word	43
@@ -115,29 +115,29 @@
  117 00cc 0100      		.word	1
  118 00ce 0100      		.word	1
  119 00d0 0100      		.word	1
- 120 00d2 3600      		.word	54
- 121 00d4 3700      		.word	55
- 122 00d6 3800      		.word	56
- 123 00d8 3300      		.word	51
- 124 00da 3400      		.word	52
+ 120 00d2 0100      		.word	1
+ 121 00d4 0100      		.word	1
+ 122 00d6 0100      		.word	1
+ 123 00d8 0100      		.word	1
+ 124 00da 0100      		.word	1
  125 00dc 0100      		.word	1
  126 00de 0100      		.word	1
  127 00e0 0100      		.word	1
  128 00e2 0100      		.word	1
  129 00e4 0100      		.word	1
  130 00e6 0100      		.word	1
- 131 00e8 5000      		.word	80
- 132 00ea 5100      		.word	81
- 133 00ec 5200      		.word	82
- 134 00ee 4F00      		.word	79
+ 131 00e8 0100      		.word	1
+ 132 00ea 0100      		.word	1
+ 133 00ec 0100      		.word	1
+ 134 00ee 0100      		.word	1
  135 00f0 0100      		.word	1
  136 00f2 0100      		.word	1
  137 00f4 0100      		.word	1
  138 00f6 0100      		.word	1
  139 00f8 0100      		.word	1
- 140 00fa 2D02      		.word	557
- 141 00fc 2E02      		.word	558
- 142 00fe 3102      		.word	561
+ 140 00fa 0100      		.word	1
+ 141 00fc 0100      		.word	1
+ 142 00fe 0100      		.word	1
  143 0100 2F02      		.word	559
  144 0102 3002      		.word	560
  145 0104 2B00      		.word	43
@@ -145,11 +145,11 @@
  147 0108 0100      		.word	1
  148 010a 0100      		.word	1
  149 010c 0100      		.word	1
- 150 010e 3602      		.word	566
- 151 0110 3702      		.word	567
- 152 0112 3802      		.word	568
- 153 0114 3302      		.word	563
- 154 0116 3402      		.word	564
+ 150 010e 0100      		.word	1
+ 151 0110 0100      		.word	1
+ 152 0112 0100      		.word	1
+ 153 0114 0100      		.word	1
+ 154 0116 0100      		.word	1
  155 0118 0100      		.word	1
  156 011a 0100      		.word	1
  157 011c 0100      		.word	1
@@ -164,12 +164,12 @@
  166 012e 2346      		.word	17955
  167 0130 8A45      		.word	17802
  168 0132 9445      		.word	17812
- 169 0134 0100      		.word	1
+ 169 0134 4600      		.word	70
  170 0136 0100      		.word	1
  171 0138 0100      		.word	1
  172 013a 0100      		.word	1
- 173 013c 0100      		.word	1
- 174 013e 4600      		.word	70
+ 173 013c 3602      		.word	566
+ 174 013e 3702      		.word	567
  175 0140 0100      		.word	1
  176 0142 0100      		.word	1
  177 0144 0100      		.word	1
@@ -199,11 +199,11 @@
  201               		.file 5 "actionmap_gherkin.c"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 actionmap_gherkin.c
-     /tmp/ccplKfnx.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccplKfnx.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccplKfnx.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccplKfnx.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccplKfnx.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccplKfnx.s:14     .progmem.data.actionmaps:0000000000000000 actionmaps
+     /tmp/ccqkw34f.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccqkw34f.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccqkw34f.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccqkw34f.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccqkw34f.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccqkw34f.s:14     .progmem.data.actionmaps:0000000000000000 actionmaps
 
 NO UNDEFINED SYMBOLS

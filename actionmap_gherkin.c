@@ -50,18 +50,18 @@ const action_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
     TRNS,   TRNS,   TRNS,   TRNS,   DEL,    TRNS,   TRNS,   TRNS,   TRNS,   TRNS),
     [2] = ACTIONMAP( \
     S01,    S02,    S03,    S04,    S05,    S06,    S07,    S08,    S09,    S10, \
-    F11,    F12,    TRNS,   TRNS,   SLSH,   BSLS,   TRNS,   TRNS,   UP,   GRV, \
-    TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   LEFT,   DOWN,   RGHT),
+    MINS,   S12,    QUOT,   S20,    SLSH,   BSLS,   DOT,    COMM,   UP,     SCLN, \
+    S11,    EQL,    S18,    S15,    TRNS,   TRNS,   S19,    LEFT,   DOWN,   RGHT),
     [3] = ACTIONMAP( \
-    TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   MINS,   EQL,    BSLS,   LBRC,   RBRC, \
-    TAB,    TRNS,   TRNS,   TRNS,   TRNS,   COMM,   DOT,    SLSH,   SCLN,   QUOT, \
-    TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   LEFT,   DOWN,   UP,     RGHT),
+    TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   LBRC,   RBRC, \
+    TAB,    TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS, \
+    TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS),
     [4] = ACTIONMAP( \
-    TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   S11,    S12,    S15,    S13,    S14, \
-    TAB,    TRNS,   TRNS,   TRNS,   TRNS,   S16,    S17,    S18,    S19,    S20, \
+    TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   S13,    S14, \
+    TAB,    TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS, \
     TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   HOME,   PGDN,   PGUP,   END),
     [5] = ACTIONMAP( \
-    CALC,   WHOM,   MAIL,   MYCM,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   PSCR, \
+    CALC,   WHOM,   MAIL,   MYCM,   PSCR,   TRNS,   TRNS,   TRNS,   S16,    S17, \
     TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS,   BLD,    BLI, \
     TRNS,   TRNS,   TRNS,   TRNS,   BTLD,   TRNS,   TRNS,   TRNS,   TRNS,   TRNS),
 };
