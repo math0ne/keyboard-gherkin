@@ -3,7 +3,7 @@
 
 You can see my layout here: http://www.keyboard-layout-editor.com/#/gists/5dec436256c0d150b6f5e854bc4c8429
 
-I did this process in ubuntu bash for windows which seems to work great but will also work in cygwin or any linux distro.
+I ran these commands in ubuntu bash for windows which seems to work great but will also work in cygwin or any linux distro.
 
 * How to flash:
 
@@ -14,7 +14,7 @@ cd keyboard-gherkin
 make
 ```
 
-* Copy your .hex file to somewhere you can easily access it.
+* Copy your .hex file to somewhere you can easily access it on your windows machine.
 * Download Xloader: http://russemotto.com/xloader/
 * Connect your pro micro via usb, you should hear the device connected sound, if you do not you may not be using a proper data micro usb cable.
 * Reset the pro micro twice to enter bootloader mode.
