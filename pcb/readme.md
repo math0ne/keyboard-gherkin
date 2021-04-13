@@ -32,6 +32,9 @@ Top and bottom plates. Same outer dimensions. Can't guarantee other PCB fabs wil
     Copper Weight: 1;
     Panelized PCBs: 1
 
+Original Creator: https://www.40percent.club/
+
+Originally forked from: https://github.com/di0ib/
 
 Gerber files released under https://creativecommons.org/licenses/by-sa/4.0/
 
